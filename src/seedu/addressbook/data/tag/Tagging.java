@@ -2,14 +2,14 @@ package seedu.addressbook.data.tag;
 
 import seedu.addressbook.data.person.*;
 
+enum Sign{ PLUS, MINUS;}
+
 public class Tagging {
     
     public static final String PLUS_TAG = "+ ";
     public static final String MINUS_TAG = "- ";
     
-    public enum Sign{
-        PLUS, MINUS;
-    }
+   
     
     private Sign sign;
     private Person person;
