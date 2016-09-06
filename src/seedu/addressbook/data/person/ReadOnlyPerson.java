@@ -13,7 +13,20 @@ public interface ReadOnlyPerson {
     Phone getPhone();
     Email getEmail();
     Address getAddress();
-
+    
+    /**
+     * Returns a concatenated version of the printable strings of each object.
+     */
+    default String getPrintableString(Printable... printables){
+        final StringBuilder builder = new StringBuilder();
+        for (Printable printable : printables) {
+            builder.append(printable.getPrintableString() + ", ");
+        }
+     
+        return builder.substring(0, builder.length()-1);
+        
+    }
+    
     /**
      * The returned TagList is a deep copy of the internal TagList,
      * changes on the returned list will not affect the person's internal tags.
